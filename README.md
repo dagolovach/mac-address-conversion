@@ -16,8 +16,11 @@ Simple script to convert MAC address between formats:
 
 Examples:
 ```sh
-python mac_address_conversion.py 0123456789AB dash
-python mac_address_conversion.py 0123456789AB dot
+>python mac_address_conversion.py 0123456789AB dash
+01-23-45-67-89-AB
+
+>python mac_address_conversion.py 0123456789AB dot
+0123.4567.89AB
 ```
 
 ## Contact
