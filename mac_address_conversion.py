@@ -19,20 +19,16 @@ def main(current_mac_address, mac_address_format):
     }
     symbol = dict_mac_formats.get(mac_address_format, 'Invalid format')
     if symbol == 'Invalid format':
-        print('Invalid format. Should be none | dot |  colon | dash ')
-        return
+        return 'Invalid format. Should be none | dot |  colon | dash '
 
     if len(current_mac_address) == 12:
         symbol = dict_mac_formats.get(mac_address_format, 'Invalid format')
-        print(mac_normalization(current_mac_address, symbol))
+        return mac_normalization(current_mac_address, symbol)
     else:
-        print('Invalid format. Should be 01-23-45-67-89-AB | 01:23:45:67:89:AB | 0123456789AB | 0123.4567.89AB\n or '
-              'any combination')
-
-    return
-
+        return "Invalid format. Should be 01-23-45-67-89-AB | 01:23:45:67:89:AB | 0123456789AB | 0123.4567.89AB or " \
+               "any combination "
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
         raise SyntaxError("Insufficient arguments.")
-    main(sys.argv[1], sys.argv[2])
+    print(main(sys.argv[1], sys.argv[2]))
