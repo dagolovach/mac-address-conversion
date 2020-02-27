@@ -17,16 +17,19 @@ def main(current_mac_address, mac_address_format):
         'colon': ':',
         'dash': '-'
     }
+    symbol = dict_mac_formats.get(mac_address_format, 'Invalid format')
+    if symbol == 'Invalid format':
+        print('Invalid format. Should be none | dot |  colon | dash ')
+        return
 
     if len(current_mac_address) == 12:
-        symbol = dict_mac_formats[mac_address_format]
+        symbol = dict_mac_formats.get(mac_address_format, 'Invalid format')
         print(mac_normalization(current_mac_address, symbol))
-        result = True
     else:
-        print('not enough or too many characters or invalid format')
-        result = False
+        print('Invalid format. Should be 01-23-45-67-89-AB | 01:23:45:67:89:AB | 0123456789AB | 0123.4567.89AB\n or '
+              'any combination')
 
-    return result
+    return
 
 
 if __name__ == '__main__':
